@@ -9,11 +9,15 @@ RUN apt-get update && \
     apt-get install -y \
     build-essential \         
     gcc \                     
-    gdb \                    
+    gdb \   
+    man-db  \                 
     clang \                   
     clang-format \            
     clang-tidy \              
     && rm -rf /var/lib/apt/lists/*
+
+# Unminimize the base image so we have access to man pages becuase we love them!
+RUN yes | unminimize
 
 # Set the working directory inside the container
 WORKDIR /app
