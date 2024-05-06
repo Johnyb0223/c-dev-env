@@ -13,7 +13,8 @@ RUN apt-get update && \
     man-db  \                 
     clang \                   
     clang-format \            
-    clang-tidy \              
+    clang-tidy \ 
+    git \             
     && rm -rf /var/lib/apt/lists/*
 
 # Unminimize the base image so we have access to man pages becuase we love them!
